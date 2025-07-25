@@ -1,0 +1,383 @@
+/* Footer Section - ES Brand Color Theme */
+:root {
+  /* ES Brand Colors */
+  --brand-light: #60A5FA;
+  --brand-primary: #3B82F6;
+  --brand-deep: #2563EB;
+  --brand-dark: #1D4ED8;
+  --brand-gradient: linear-gradient(135deg, #60A5FA 0%, #3B82F6 30%, #2563EB 70%, #1D4ED8 100%);
+  
+  /* Supporting Colors */
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-900: #0F172A;
+  --white: #FFFFFF;
+}
+
+.footer-section {
+  background: var(--brand-gradient);
+  color: var(--white);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation Links Section */
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+  padding: 60px 0 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-column h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-column ul li {
+  margin-bottom: 12px;
+}
+
+.nav-column ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 4px 0;
+}
+
+.nav-column ul li a:hover {
+  color: var(--white);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Company Logo and Description Section */
+.footer-middle {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.company-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.company-logo {
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: scale(1.05);
+}
+
+.company-logo img {
+  height: 60px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  /* Logo styling for visibility on blue background */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.company-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Social Links Section */
+.footer-social {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social_links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social_link {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.social_link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.social_link svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px 0 30px;
+  }
+  
+  .nav-column:nth-child(4),
+  .nav-column:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 40px 0 30px;
+  }
+  
+  .footer-container {
+    padding: 0 15px;
+  }
+  
+  .company-logo img {
+    height: 50px;
+  }
+  
+  .company-description {
+    font-size: 0.95rem;
+  }
+  
+  .social_links {
+    gap: 15px;
+  }
+  
+  .social_link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social_link svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 0 20px;
+    text-align: center;
+  }
+  
+  .footer-middle {
+    padding: 30px 0;
+  }
+  
+  .footer-social {
+    padding: 25px 0;
+  }
+  
+  .company-logo img {
+    height: 45px;
+  }
+  
+  .company-description {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  
+  .social_links {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .social_link {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .social_link svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .footer-bottom {
+    padding: 20px 0;
+  }
+  
+  .copyright {
+    font-size: 0.85rem;
+  }
+}
+
+/* Additional Visual Effects */
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* Hover effects for navigation columns */
+.nav-column {
+  transition: transform 0.2s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nav-column:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle hover effects */
+.nav-links li {
+  transition: transform 0.2s ease;
+}
+
+.nav-links li:hover {
+  transform: translateX(4px);
+}
+
+.contact-item {
+  transition: color 0.2s ease;
+}
+
+.contact-item:hover span {
+  color: var(--white);
+}
+
+/* Enhanced gradient effect */
+.footer-section {
+  position: relative;
+  background: var(--brand-gradient);
+}
+
+.footer-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* Logo variants for better visibility */
+.company-logo.white-bg img {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.company-logo.transparent img {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: brightness(0) invert(1);
+}
+
+/* Navigation link enhancements */
+.nav-column ul li a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-column ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-column ul li a:hover::before {
+  left: 100%;
+}
+
+/* Social links enhancement */
+.social_link {
+  position: relative;
+  overflow: hidden;
+}
+
+.social_link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.social_link:hover::before {
+  transform: scale(1);
+}

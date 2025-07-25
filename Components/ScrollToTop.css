@@ -1,0 +1,224 @@
+/* Scroll to Top Button Styles */
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Animation entrance */
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.scroll-to-top-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+.scroll-to-top-btn:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Icon inside button */
+.scroll-to-top-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Alternative designs for scroll to top button */
+
+/* Design 2: Minimal Circle */
+.scroll-to-top-btn.minimal {
+  background: rgba(255, 255, 255, 0.9);
+  color: #3b82f6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.scroll-to-top-btn.minimal:hover {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Design 3: Rounded Square */
+.scroll-to-top-btn.square {
+  border-radius: 12px;
+  width: 45px;
+  height: 45px;
+}
+
+/* Design 4: With Text */
+.scroll-to-top-btn.with-text {
+  width: auto;
+  height: 45px;
+  padding: 0 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.5rem;
+}
+
+.scroll-to-top-btn.with-text::after {
+  content: "Top";
+}
+
+/* Design 5: Pulsing Effect */
+.scroll-to-top-btn.pulse {
+  animation: fadeInUp 0.3s ease-out, pulse 2s infinite;
+}
+
+.scroll-to-top-btn.pulse::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  opacity: 0.3;
+  animation: pulseRing 2s infinite;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6), 0 0 0 8px rgba(59, 130, 246, 0.1);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .scroll-to-top-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .scroll-to-top-btn.with-text {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  
+  .scroll-to-top-btn.with-text::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .scroll-to-top-btn.minimal {
+    background: rgba(30, 41, 59, 0.9);
+    color: #60a5fa;
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .scroll-to-top-btn {
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .scroll-to-top-btn:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top-btn {
+    animation: none;
+    transition: none;
+  }
+  
+  .scroll-to-top-btn:hover {
+    transform: none;
+  }
+  
+  .scroll-to-top-btn.pulse {
+    animation: none;
+  }
+  
+  .scroll-to-top-btn.pulse::before {
+    animation: none;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.scroll-to-top-btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .scroll-to-top-btn {
+    display: none;
+  }
+}
