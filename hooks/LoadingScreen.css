@@ -1,0 +1,219 @@
+/* Effective Solutions Loading Screen - Complete CSS */
+
+/* Main Loading Screen Container */
+.effectivesolutions-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* Main Loading Wrapper */
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* ES Logo Container */
+.es-logo-container {
+  margin-bottom: 60px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+/* Remove complex outer circle, use simple container */
+.logo-outer-circle {
+  display: contents;
+}
+
+/* Remove complex inner background */
+.logo-inner-bg {
+  display: contents;
+}
+
+/* ES Logo Image */
+.es-elements {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: logoScale 2s ease-in-out infinite;
+}
+
+/* Company Details */
+.company-details {
+  color: #ffffff;
+  max-width: 600px;
+}
+
+.main-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+  letter-spacing: -1px;
+  animation: titleFade 1s ease-out 0.5s both;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  animation: taglineFade 1s ease-out 0.8s both;
+}
+
+/* Simple, Clean Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes logoScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes taglineFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .es-logo-container {
+    padding: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .es-elements {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .es-logo-container {
+    padding: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .es-elements {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+    padding: 0 30px;
+  }
+}
+
+/* Loading Exit Animation */
+.effectivesolutions-loading.exit {
+  animation: exitFade 0.8s ease-in forwards;
+}
+
+@keyframes exitFade {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+/* Accessibility Support */
+@media (prefers-reduced-motion: reduce) {
+  .loading-wrapper,
+  .es-logo-container,
+  .es-elements,
+  .main-title,
+  .tagline {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .effectivesolutions-loading {
+    background: #000000;
+  }
+  
+  .main-title,
+  .tagline {
+    color: #ffffff;
+  }
+  
+  .es-logo-container {
+    border: 2px solid #ffffff;
+  }
+}
